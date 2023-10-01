@@ -26,8 +26,12 @@ export const test = async (req, res) => {
   //   salary: 1000000
   // })
   // await emp.save();
-  const data =  await employeeCollection.find({});
+  const data = await employeeCollection.find({});
   console.log(data);
   res.setHeader("Content-Type", "json");
   res.end(JSON.stringify(data));
+};
+
+export const employeeList = async (req, res) => {
+  res.render("employee");
 };
