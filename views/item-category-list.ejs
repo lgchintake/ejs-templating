@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Category List</title>
+    <style>
+      .main-div {
+        max-width: 700px;
+      }
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="center"><h4>Category List</h4></div>
+      <table border="1">
+        <tr>
+          <th>Sr.No.</th>
+          <th>Category ID</th>
+          <th>Category Name</th>
+          <th>Category Description</th>
+          <th>Action</th>
+        </tr>
+        <% categoryList.map((category, index)=>{ %>
+        <tr>
+          <td class="center"><%=index + 1 %></td>
+          <td><%=category._id%></td>
+          <td><%=category.categoryName%></td>
+          <td><%=category.categoryDescription%></td>
+          <td><a href="/item-category/edit/<%=category._id%>">Edit</a></td>
+        </tr>
+        <% }) %>
+      </table>
+    </div>
+  </body>
+</html>

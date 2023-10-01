@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Edit Category</title>
+    <style>
+      .main-div {
+        max-width: 500px;
+      }
+      .center {
+        text-align: center;
+      }
+      .green {
+        color: rgb(17, 216, 17);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="center"><h3>Edit Item Category</h3></div>
+      <% if(typeof category != 'undefined') { %>
+      <form action="/item-category/<%=category._id%>" method="post">
+        <table>
+          <tr>
+            <td><label for="categoryName">Category Name</label></td>
+            <td>
+              <input
+                type="text"
+                name="categoryName"
+                value="<%=category.categoryName%>"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="categoryDescription">Category Description</label>
+            </td>
+            <td>
+              <textarea name="categoryDescription" cols="30" rows="3">
+<%=category.categoryDescription%></textarea
+              >
+            </td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="2" class="center">
+              <input type="submit" name="saveBtn" value="Save Changes" />
+            </td>
+          </tr>
+        </table>
+      </form>
+      <%} else {%>
+      <div>You have entered wrong category id</div>
+      <%}%>
+    </div>
+  </body>
+</html>

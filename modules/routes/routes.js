@@ -1,8 +1,8 @@
 import express from "express";
-import employeeRoute from "./employee.routes.js";
+import itemCategoryRoute from "./itemcategory.routes.js";
 
 const Router = express();
 
-Router.use("/employee", employeeRoute);
+Router.use("/item-category", itemCategoryRoute);
 
 export default Router;

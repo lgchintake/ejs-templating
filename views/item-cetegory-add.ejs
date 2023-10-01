@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Add Category</title>
+    <style>
+      .main-div {
+        max-width: 500px;
+      }
+      .center {
+        text-align: center;
+      }
+      .green {
+        color: rgb(17, 216, 17);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="center"><h3>Add Item Category</h3></div>
+      <form action="/item-category/" method="post">
+        <table>
+          <tr>
+            <td><label for="categoryName">Category Name</label></td>
+            <td><input type="text" name="categoryName" /></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="categoryDescription">Category Description</label>
+            </td>
+            <td>
+              <textarea
+                name="categoryDescription"
+                cols="30"
+                rows="3"
+              ></textarea>
+            </td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="2" class="center">
+              <input type="submit" name="saveBtn" value="Save Category" />
+            </td>
+          </tr>
+        </table>
+      </form>
+      <% if(typeof categoryDetails != 'undefined') { %>
+      <div>
+        Your category
+        <b class="green"><%=categoryDetails.categoryName %></b> has been
+        successfully saved!
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

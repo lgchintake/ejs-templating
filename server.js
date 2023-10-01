@@ -1,10 +1,12 @@
 import express from "express";
 import appRouter from "./modules/routes/routes.js";
 import mongoose from "mongoose";
+import formidable from "express-formidable";
 
 const app = express();
 app.use(express.json());
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
+app.use(formidable());
 
 app.use("/", appRouter);
 
