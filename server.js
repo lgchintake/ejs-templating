@@ -2,9 +2,11 @@ import express from "express";
 import appRouter from "./modules/routes/routes.js";
 import mongoose from "mongoose";
 import formidable from "express-formidable";
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.set("view engine", "ejs");
 app.use(formidable());
 

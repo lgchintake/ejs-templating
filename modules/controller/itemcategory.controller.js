@@ -46,3 +46,11 @@ export const updateItemCategory = async (req, res) => {
     res.render("item-category-edit", { errorDetails: udpatedDetails });
   }
 };
+
+/********************* UI APIs ***************************/
+
+export const getUiCategoryList = async (req, res) => {
+  const categoryList = await itemCategoryCollection.find();
+  res.writeHead(200, { "Content-Type": "json" });
+  res.end(JSON.stringify(categoryList));
+};
